@@ -45,8 +45,7 @@ const AddFuncionario = props => {
   <label>Cep</label>
   <input type="text" name="CEP" value={funcionarios.CEP} onChange={handleInputChange} />
 
-
-  <button>Cadastra Funcionário</button>
+  <button>Cadastrar Funcionário</button>
     </form>
   )
 }

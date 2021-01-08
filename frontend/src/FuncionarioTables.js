@@ -1,7 +1,6 @@
 import React from 'react'
 import api from './services/api';
 const FuncionarioTables = props => (
-  
   <table>
     <thead>
       <tr>
@@ -24,9 +23,10 @@ const FuncionarioTables = props => (
           </tr>
         ))
       ) : (
-        <tr>
-          <td colSpan={3}>No funcionario</td>
-        </tr>
+        <tr><td>.</td></tr>
+        //<tr>
+          //<td colSpan={3}>Nehum Funcionário cadastro</td>
+        //</tr>
       )}
     </tbody>
   </table>

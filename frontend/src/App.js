@@ -11,6 +11,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(initialFormState)
   const [funcionarios, setFuncionarios] = useState(initialFormState2);
   const [editing, setEditing] = useState(false)
+
   async function loadFuncionarios() {
     const response = await api.get('/funcionarios');
     setFuncionarios(response.data);
@@ -51,10 +52,15 @@ function App() {
     { id: 3, name: 'Ben', username: 'benisphere' },
   ]
   const [users, setUsers] = useState(usersData)
+  const nFun = funcionarios.length
+  // VER COMO FAZER A QUESTÃO DO IF
   return (
     <div className="container">
-      <FuncionarioTable funcionarios={funcionarios} editRow={editRow} deletefun2={deletefun2} />
-      <h1>CRUD App with Hooks</h1>
+      <h1>Tela de Controle de Funcionários: </h1>
+      if({nFun >0 || nFun==='undefined'})
+        <FuncionarioTable funcionarios={funcionarios} editRow={editRow} deletefun2={deletefun2} />
+      else
+        <p>Não existe funcionário</p>
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (
@@ -68,7 +74,7 @@ function App() {
             </div>
           ) : (
               <div>
-                <h2>Add user</h2>
+                <h2>Adicionar um novo funcionários: </h2>
                 <AddFuncionario addFunc={addFunc} />
               </div>
             )}
